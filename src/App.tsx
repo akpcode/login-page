@@ -11,7 +11,6 @@ const App: React.FC = () => {
     // Save the inputs to localStorage
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
-
     // Authentication handler
     console.log('Email:', email);
     console.log('Password:', password);
