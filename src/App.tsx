@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const App: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [, setIsLoggedIn] = useState(false);
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
