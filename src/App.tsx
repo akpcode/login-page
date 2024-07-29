@@ -3,21 +3,29 @@ import React, { useState } from 'react';
 const App: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
     
-    //saving the inputs
+    // Save the inputs to localStorage
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
-    
-    // Authentication handler
+
+    // Authentication handler (for demonstration purposes)
     console.log('Email:', email);
     console.log('Password:', password);
+    
+    // Set login status and alert user
+    setIsLoggedIn(true);
+    alert('Login Successful');
+    
+    // Reload the page
+    window.location.reload();
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen ml-80 w-full bg-gray-600 bg-opacity-30">
+    <div className="flex items-center justify-center min-h-screen  w-full ml-80 bg-gray-600 bg-opacity-30">
       <div className="bg-white p-6 shadow-md w-full max-w-sm rounded-2xl">
         <h2 className="text-2xl font-bold mb-6 text-center text-red-400">Login</h2>
         <form onSubmit={submitHandler}>
@@ -43,11 +51,15 @@ const App: React.FC = () => {
               required
             />
           </div>
-          <div className="block text-sm font-medium text-gray-700 mr-8">
-          <label htmlFor='Remember Me' className='mr-4' >Remember Me</label>
-            <input type="checkbox" 
-            name='' id='' />
-           
+          <div className="flex items-center mb-6">
+            <input
+              type="checkbox"
+              id="rememberMe"
+              className="mr-2"
+            />
+            <label htmlFor="rememberMe" className="block text-sm font-medium text-gray-700">
+              Remember Me
+            </label>
           </div>
           <button
             type="submit"
