@@ -12,11 +12,11 @@ const App: React.FC = () => {
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
 
-    // Authentication handler (for demonstration purposes)
+    // Authentication handler
     console.log('Email:', email);
     console.log('Password:', password);
     
-    // Set login status and alert user
+    // Set login
     setIsLoggedIn(true);
     alert('Login Successful');
     
