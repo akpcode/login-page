@@ -24,7 +24,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen  w-full bg-gray-600 bg-opacity-30">
+    <div className="flex items-center justify-center min-h-screen  w-full  bg-gray-600 bg-opacity-30">
       <div className="bg-white p-6 shadow-md w-full max-w-sm rounded-2xl">
         <h2 className="text-2xl font-bold mb-6 text-center text-red-400">Login</h2>
         <form onSubmit={submitHandler}>
